@@ -8,7 +8,7 @@
         Height="450"
         x:Class="VRC_QR_Reader.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
+        Icon="/Assets/QRLogo.ico"
         Title="VRChat QR Code Utilities">
 
     <Design.DataContext>
