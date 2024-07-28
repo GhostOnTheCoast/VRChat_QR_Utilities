@@ -9,7 +9,7 @@ There are several options:
 - VRCX Compatibility -> This checkbox causes the program to wait until VRCX Renames the file for decoding. (Default On)
 
 There are also several buttons: 
-- Scan Whole Directory -> Scans your entire VRChat picture directory and all sub directories and processes every file for QR Codes. *Note: This could take a very long time. *
-- Save List to CSV -> This button saves the current list of URI objects to an HTML and CSV file in the directory of the EXE. They will be named QRCode.csv and QRCode.html. ***Note: These files will overwrite any existing ones ***
+- Scan Whole Directory -> Scans your entire VRChat picture directory and all sub directories and processes every file for QR Codes. *Note: This could take a very long time.*
+- Save List to CSV -> This button saves the current list of URI objects to an HTML and CSV file in the directory of the EXE. They will be named QRCode.csv and QRCode.html. ***Note: These files will overwrite any existing ones***
 
 
