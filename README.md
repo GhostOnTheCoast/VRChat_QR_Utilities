@@ -13,3 +13,5 @@ There are also several buttons:
 - Save List to CSV -> This button saves the current list of URI objects to an HTML and CSV file in the directory of the EXE. They will be named QRCode.csv and QRCode.html. ***Note: These files will overwrite any existing ones***
 
 
+## Tech
+This project is built on C# 7.0 with ZXing.net Barcode Library, using ReactiveUI and Avalonia. 
