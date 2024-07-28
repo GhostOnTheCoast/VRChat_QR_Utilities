@@ -1,0 +1,48 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:VRC_QR_Reader.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="450"
+        Width="450"
+        Height="450"
+        x:Class="VRC_QR_Reader.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="VRChat QR Code Utilities">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <Grid RowDefinitions="Auto,Auto,2*,Auto, Auto, Auto" ColumnDefinitions="Auto,*">
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="1" Text="Monitoring: " HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding QrCodesPath}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <ListBox Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="2" x:Name="UriListBox" ItemsSource="{Binding UrlObjects}" SelectionMode="Multiple,Toggle" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" ToolTip.Placement="Bottom">
+                        <ToolTip.Tip>
+                            <StackPanel>
+                                <TextBlock FontSize="16" FontWeight="Bold">Details</TextBlock>
+                                <StackPanel Orientation="Horizontal"><TextBlock Text="Uri:  " FontStyle="Italic"/><TextBlock Text="{Binding Uri}" TextWrapping="Wrap"/></StackPanel>
+                                <StackPanel Orientation="Horizontal"><TextBlock Text="File: " FontStyle="Italic"/><TextBlock Text="{Binding FileName}" TextWrapping="Wrap"/> </StackPanel>
+                                <StackPanel Orientation="Horizontal"><TextBlock Text="Description: " FontStyle="Italic"/><TextBlock Text="{Binding Description}" TextWrapping="Wrap"/></StackPanel>
+                            </StackPanel>
+                        </ToolTip.Tip>
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <CheckBox Grid.Column="0"  Grid.Row="3" IsChecked="{Binding AutoOpen}">Auto Open URL</CheckBox>
+        <CheckBox Grid.Column="1"  Grid.Row="3" IsChecked="{Binding PlaySound}">Play Sound on QR Read</CheckBox>
+        
+        <Button Grid.Column="0" Grid.Row="4" x:Name="ScanBtn">Scan Whole Directory</Button>
+        <Button Grid.Column="1" Grid.Row="4" x:Name="SaveBtn">Save List to CSV</Button>
+        
+        <CheckBox Grid.Column="0"  Grid.Row="5" IsChecked="{Binding VrcXCompat}">VRCX Compatibility</CheckBox>
+    </Grid>
+    
+
+</Window>
